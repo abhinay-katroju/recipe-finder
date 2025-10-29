@@ -13,8 +13,8 @@ const RecipeCard = ({ recipe }) => {
   }
 
   return (
-    <div className="bg-white rounded-lg sm:rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-      <div className="relative h-40 sm:h-48 bg-gray-200">
+    <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100">
+      <div className="relative h-32 sm:h-48 bg-gradient-to-br from-orange-100 to-red-100">
         {!imageError ? (
           <img
             src={recipe.strMealThumb}
@@ -25,20 +25,20 @@ const RecipeCard = ({ recipe }) => {
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-100 to-red-100">
             <div className="text-center">
-              <div className="text-4xl mb-2">🍽️</div>
-              <p className="text-gray-500 text-sm">Image not available</p>
+              <div className="text-2xl sm:text-4xl mb-1 sm:mb-2">🍽️</div>
+              <p className="text-gray-500 text-xs sm:text-sm hidden sm:block">Image not available</p>
             </div>
           </div>
         )}
         
-        <div className="absolute top-2 right-2">
+        <div className="absolute top-1 right-1 sm:top-2 sm:right-2">
           <button
             onClick={toggleDetails}
-            className="bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full p-2 shadow-lg transition-all"
+            className="bg-orange-500 hover:bg-orange-600 text-white rounded-full p-1 sm:p-2 shadow-lg transition-all"
             title="View details"
           >
             <svg
-              className={`w-5 h-5 text-gray-700 transition-transform ${showDetails ? 'rotate-180' : ''}`}
+              className={`w-3 h-3 sm:w-5 sm:h-5 transition-transform ${showDetails ? 'rotate-180' : ''}`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -49,8 +49,8 @@ const RecipeCard = ({ recipe }) => {
         </div>
       </div>
 
-      <div className="p-3 sm:p-4">
-        <h3 className="font-semibold text-base sm:text-lg text-gray-800 mb-2 line-clamp-2">
+      <div className="p-2 sm:p-4">
+        <h3 className="font-bold text-xs sm:text-lg text-gray-800 mb-1 sm:mb-2 line-clamp-2 leading-tight">
           {recipe.strMeal}
         </h3>
         
@@ -74,14 +74,14 @@ const RecipeCard = ({ recipe }) => {
         )}
 
         {!showDetails && (
-          <div className="flex items-center justify-between mt-2 sm:mt-3">
+          <div className="flex items-center justify-between mt-1 sm:mt-3">
             <button
               onClick={toggleDetails}
-              className="text-orange-500 hover:text-orange-600 text-xs sm:text-sm font-medium"
+              className="text-orange-600 hover:text-orange-700 text-xs sm:text-sm font-bold bg-orange-50 px-2 py-1 rounded-md"
             >
-              View Details
+              Details
             </button>
-            <div className="text-xs text-gray-400">
+            <div className="text-xs text-gray-400 hidden sm:block">
               ID: {recipe.idMeal}
             </div>
           </div>

@@ -24,10 +24,10 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-yellow-50 to-red-50">
       <Header />
       
-      <main className="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
+      <main className="container mx-auto px-1 sm:px-4 py-2 sm:py-8 max-w-7xl">
         <RecipeSearch 
           onRecipesFound={handleRecipesFound}
           onError={handleError}
@@ -47,7 +47,7 @@ function App() {
           </div>
         )}
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mt-6 sm:mt-8 px-2 sm:px-0">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-4 lg:gap-6 mt-4 sm:mt-8">
           {recipes.map((recipe) => (
             <RecipeCard key={recipe.idMeal} recipe={recipe} />
           ))}
