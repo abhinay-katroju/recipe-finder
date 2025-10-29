@@ -13,8 +13,8 @@ const RecipeCard = ({ recipe }) => {
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-      <div className="relative h-48 bg-gray-200">
+    <div className="bg-white rounded-lg sm:rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+      <div className="relative h-40 sm:h-48 bg-gray-200">
         {!imageError ? (
           <img
             src={recipe.strMealThumb}
@@ -49,14 +49,14 @@ const RecipeCard = ({ recipe }) => {
         </div>
       </div>
 
-      <div className="p-4">
-        <h3 className="font-semibold text-lg text-gray-800 mb-2 line-clamp-2">
+      <div className="p-3 sm:p-4">
+        <h3 className="font-semibold text-base sm:text-lg text-gray-800 mb-2 line-clamp-2">
           {recipe.strMeal}
         </h3>
         
         {showDetails && (
-          <div className="mt-4 pt-4 border-t border-gray-100">
-            <div className="space-y-2 text-sm text-gray-600">
+          <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-gray-100">
+            <div className="space-y-2 text-xs sm:text-sm text-gray-600">
               <p><span className="font-medium">Recipe ID:</span> {recipe.idMeal}</p>
               
               <div className="flex gap-2 mt-3">
@@ -64,7 +64,7 @@ const RecipeCard = ({ recipe }) => {
                   href={`https://www.themealdb.com/meal/${recipe.idMeal}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 bg-orange-500 hover:bg-orange-600 text-white text-center py-2 px-3 rounded-lg transition-colors font-medium text-sm"
+                  className="flex-1 bg-orange-500 hover:bg-orange-600 text-white text-center py-2 sm:py-3 px-3 rounded-lg transition-colors font-medium text-xs sm:text-sm"
                 >
                   View Full Recipe
                 </a>
@@ -74,10 +74,10 @@ const RecipeCard = ({ recipe }) => {
         )}
 
         {!showDetails && (
-          <div className="flex items-center justify-between mt-3">
+          <div className="flex items-center justify-between mt-2 sm:mt-3">
             <button
               onClick={toggleDetails}
-              className="text-orange-500 hover:text-orange-600 text-sm font-medium"
+              className="text-orange-500 hover:text-orange-600 text-xs sm:text-sm font-medium"
             >
               View Details
             </button>
