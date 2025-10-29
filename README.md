@@ -16,9 +16,9 @@ Recipe Finder is a modern React web application designed for **Taylor**, a busy 
 
 ## 🚀 Live Demo
 
-**Local Development:** `http://localhost:5173`  
-**GitHub Repository:** https://github.com/abhinay-katroju/recipe-finder  
-**Live Deployment:** [Will be added after deployment]
+**🌐 Live Application:** https://abhinay-katroju.github.io/recipe-finder/  
+**📂 GitHub Repository:** https://github.com/abhinay-katroju/recipe-finder  
+**💻 Local Development:** `http://localhost:5173`
 
 ## ✨ Features
 
@@ -195,6 +195,12 @@ recipe-finder/
 npm run build
 ```
 This creates a `dist/` folder with optimized production files.
+
+### Deploy to GitHub Pages
+```bash
+npm run deploy
+```
+This automatically builds and deploys the application to GitHub Pages.
 
 ## 📋 Take-Home Challenge Requirements Met
 
